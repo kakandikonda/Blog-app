@@ -68,7 +68,9 @@ router.get("/:id", async (req, res) => {
     try{
         const collection = await Collection.findById(req.params.id);
         if(collection){
-            res.send({status: "ok", collection: collection});
+            const blogs = await collection.populate("Blogs");
+            const send = {name: collection.name, description: collection.description};
+            res.send({status: "ok", collection: send, blogs: blogs});
         }
         else{
             res.send({status: "err", err: "error"});

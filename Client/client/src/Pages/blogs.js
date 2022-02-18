@@ -9,9 +9,9 @@ function Home() {
     const [blog, setBlog] = useState([]);
 
     useEffect(() =>{
-      Axios.get("http://localhost:5000/blog").then((response) => {
+      Axios.get("http://localhost:5000/blog/feed").then((response) => {
         setBlog(response.data.blogs);
-        // console.log(response.data.blogs)
+        // console.log(response.data.blogs);
       });
     }, []);
 
@@ -21,7 +21,8 @@ function Home() {
         <div>
           {blog.map((item) => {
             return (
-              <Blog Title={item.Title} Description={item.Description} Author={item.Author} Id={item._id} key={item._id} />
+              <Blog Title={item.Title} Description={item.Description} Author={item.Author} Collection={item.Collection._id} Id={item._id}
+               key={item._id} />
             );
           })}
         </div>

@@ -5,11 +5,12 @@ import Layout from "../Components/Layout"
 
 function Blog(){
 
-    const {id} = useParams();
+    const {cid, bid} = useParams();
     const [blog, setBlog] = useState({})
+    console.log(bid, cid)
 
     useEffect(() =>{
-        Axios.get(`http://localhost:5000/blog/${id}`).then((response) => {
+        Axios.get(`http://localhost:5000/blog/${bid}`).then((response) => {
           // console.log(response.data.blogs)
           if (response.data.status === "ok"){
               setBlog(response.data.blog)

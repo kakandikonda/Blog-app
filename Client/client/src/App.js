@@ -32,6 +32,16 @@ const App = () => {
                         {/* blog routes */}
                         <Route path="/collections/:cid/blog/:bid" exact element={<BlogID />} />
                         <Route path="/collections/:cid/blog/new" exact element={<NewBlog />} />
+                        {/* Routes to add:
+                            1) update routes
+                            2) delete routes
+                                - make sure all instances of _id are gone
+                            3) liking func's
+                            4) searching?
+                            5) Follow users
+                            6) Styling fixes
+                            
+                        */}
                     </Routes>
                 
             </BrowserRouter>

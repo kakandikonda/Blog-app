@@ -1,7 +1,7 @@
 // import "../../css/blog.css"
 import {Card, Button, Container} from "react-bootstrap"
 
-function blog({Title, Description, Id, Author}) {
+function blog({Title, Description, Id, Author, Collection}) {
 
     return (
         
@@ -18,8 +18,10 @@ function blog({Title, Description, Id, Author}) {
                         {Description.length <= 100 &&
                         <>{Description}</>
                         }
+                        <br />
+                        <a href={`/collections/${Collection}/blog/${Id}`}>read more</a>
                     </Card.Text>
-                    <a href={`/blog/${Id}`}>read more</a>
+                    
                 </Card.Body>
                 <Card.Footer>:thumbs up:</Card.Footer>
             </Card>

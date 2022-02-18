@@ -14,7 +14,7 @@ function collection({ Id, name, description}) {
                     <Card.Text>
                         {description}
                     </Card.Text>
-                    <a href={`/collections/${Id}`}>read more</a>
+                    <a href={`/collections/${Id}`}>Go to collection</a>
                 </Card.Body>
                 {/* <Card.Footer>:thumbs up:</Card.Footer> */}
             </Card>
